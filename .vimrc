@@ -7,7 +7,7 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-powerline'
-
+Bundle 'scrooloose/syntastic'
 
 "wildcart menu
 set wildmenu
