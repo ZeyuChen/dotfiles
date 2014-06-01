@@ -8,6 +8,7 @@ Plugin 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
+Bundle 'vim-scripts/a.vim'
 
 "wildcart menu
 set wildmenu
