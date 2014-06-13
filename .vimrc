@@ -3,29 +3,36 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
+colorscheme desert
 "vim plugin install by vundle
 Plugin 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/a.vim'
+Bundle 'vim-scripts/taglist.vim'
 
 "wildcart menu
 set wildmenu
 
 "line number
 set number
-"cursorline 
+"cursorline and cursorcolumn
 set cursorline
+set cursorcolumn
+
 "ruler
 set ruler
+
+"set color column for control code length
+set colorcolumn=80
 
 "indent
 set autoindent
 set smartindent
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab	"tab is replaced with 4 spaces
 
 
@@ -36,7 +43,7 @@ set whichwrap+=<,>,h,l
 set mouse=a
 
 "hightlight parentheses match
-set showmatch
+"set showmatch
 
 "highlight syntax
 syntax enable
@@ -115,3 +122,14 @@ set t_Co=256
 
 nmap <F2> :w !pbcopy<CR>
 nmap <F3> :r !pbpaste<CR>
+
+""""""Taglist"""""""
+"for ctags in mac is different with ctags in Linux
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_Show_One_File=1 "only show current file's ctag
+let Tlist_Exit_OnlyWindow=1 "exit vim when taglist is the last windows
+let Tlist_Use_Right_Window=1 "show taglist windows on the right
+let Tlist_GainFocus_On_ToggleOpen=1
+nmap <C-t> :TlistToggle<CR>
+
+
