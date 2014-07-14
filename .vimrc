@@ -1,7 +1,7 @@
 set nocompatible    "be iMproved, required
 filetype off        
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 colorscheme desert
 "vim plugin install by vundle
@@ -11,9 +11,13 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/taglist.vim'
+<<<<<<< HEAD
 Bundle 'vim-scripts/OmniCppComplete'
 "Bundle 'Valloric/YouCompleteMe'
 
+=======
+call vundle#end()
+>>>>>>> 0d603dba4f96d84829cee018a260b2a19791e6d5
 "wildcart menu
 set wildmenu
 
