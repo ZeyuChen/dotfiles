@@ -11,6 +11,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'vim-scripts/OmniCppComplete'
+"Bundle 'Valloric/YouCompleteMe'
 
 "wildcart menu
 set wildmenu
@@ -42,9 +44,6 @@ set whichwrap+=<,>,h,l
 "using mouse
 set mouse=a
 
-"hightlight parentheses match
-"set showmatch
-
 "highlight syntax
 syntax enable
 syntax on
@@ -64,6 +63,7 @@ set autowrite
 
 """
 filetype indent plugin on
+set nocp
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Keyboard Mapping
@@ -103,7 +103,7 @@ nmap <F5> :call Compile()<CR>
 func! Compile()
     exec "w"
     if &filetype == "cpp"
-        exec "!g++ % -o %<"
+        exec "!/usr/local/bin/g++ % -o %< -std=c++11" 
     endif
 endfunc
 
@@ -130,6 +130,11 @@ let Tlist_Show_One_File=1 "only show current file's ctag
 let Tlist_Exit_OnlyWindow=1 "exit vim when taglist is the last windows
 let Tlist_Use_Right_Window=1 "show taglist windows on the right
 let Tlist_GainFocus_On_ToggleOpen=1
-nmap <C-t> :TlistToggle<CR>
+nmap <C-l> :TlistToggle<CR>
 
+
+
+""""""Syntasitic""""""""
+let g:syntastic_error_symbol = '✗'  "set error or warning signs
+let g:syntastic_warning_symbol = '⚠'
 
