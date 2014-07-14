@@ -5,19 +5,15 @@ call vundle#begin()
 
 colorscheme desert
 "vim plugin install by vundle
-Plugin 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'scrooloose/syntastic'
-Bundle 'vim-scripts/a.vim'
-Bundle 'vim-scripts/taglist.vim'
-<<<<<<< HEAD
-Bundle 'vim-scripts/OmniCppComplete'
-"Bundle 'Valloric/YouCompleteMe'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-scripts/a.vim'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'vim-scripts/OmniCppComplete'
 
-=======
 call vundle#end()
->>>>>>> 0d603dba4f96d84829cee018a260b2a19791e6d5
 "wildcart menu
 set wildmenu
 
