@@ -125,6 +125,7 @@ nmap <F3> :r !pbpaste<CR>
 
 """"""Taglist"""""""
 "for ctags in mac is different with ctags in Linux
+set tags=tags;
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Show_One_File=1 "only show current file's ctag
 let Tlist_Exit_OnlyWindow=1 "exit vim when taglist is the last windows
@@ -132,6 +133,8 @@ let Tlist_Use_Right_Window=1 "show taglist windows on the right
 let Tlist_GainFocus_On_ToggleOpen=1
 nmap <C-l> :TlistToggle<CR>
 
+""""""A.vim""""""""
+nmap <C-a> :A<CR>
 
 
 """"""Syntasitic""""""""
