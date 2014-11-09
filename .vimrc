@@ -137,4 +137,6 @@ nmap <C-l> :TlistToggle<CR>
 """"""Syntasitic""""""""
 let g:syntastic_error_symbol = '✗'  "set error or warning signs
 let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_cpp_compiler = "/usr/local/g++"
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 

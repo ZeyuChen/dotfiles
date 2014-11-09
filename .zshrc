@@ -53,8 +53,6 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin"
 
-
-
 export LD_LIBRARY_PATH="/usr/local/lib/":$LD_LIBRARY_PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
