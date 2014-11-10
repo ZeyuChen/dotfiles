@@ -28,6 +28,10 @@ map <Leader>m <esc>:tabnext<CR>
 vnoremap < <gv  " better indentation
 vnoremap > >gv  " better indentation
 
+ " Quick quit command
+noremap <Leader>q :quit<CR>  " Quit current window
+noremap <Leader>Q :qa!<CR>   " Quit all windows
+
 "line number
 set number
 "cursorline and cursorcolumn
@@ -67,6 +71,11 @@ set whichwrap+=<,>,h,l
 
 "using mouse
 set mouse=a
+
+" Bind nohl
+" Removes highlight of your last search
+noremap <C-n> :nohl<CR>
+vnoremap <C-n> :nohl<CR>
 
 "highlight syntax
 syntax enable
@@ -160,8 +169,8 @@ nmap <C-a> :A<CR>
 """"""Syntasitic""""""""
 let g:syntastic_error_symbol = '✗'  "set error or warning signs
 let g:syntastic_warning_symbol = '⚠'
-"let g:syntastic_cpp_compiler = "clang++" "use g++ instead of clang
-let g:syntastic_cpp_compiler_options = ' -std=c++11' "support c++11
+let g:syntastic_cpp_compiler = "clang++" "use g++ instead of clang
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++' "support c++11
 
 """"""OmniCppComplete""""""
 set tags+=~/dotfiles/tags/cpp
