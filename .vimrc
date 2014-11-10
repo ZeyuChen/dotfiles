@@ -18,10 +18,6 @@ call vundle#end()
 " Rebind <Leader> key
 let mapleader = ","
 
-" Quick quit command
-noremap <Leader>q :quit<CR>  " Quit current window
-noremap <Leader>Q :qa!<CR>   " Quit all windows
-
 " easier moving between tabs
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
@@ -95,6 +91,10 @@ filetype indent plugin on
 "for save and quick easily
 :command W w
 :command Q q
+
+""hot key for copy to register "
+vmap <leader>c "+y
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Keyboard Mapping
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -141,9 +141,6 @@ set laststatus=2
 let g:Powerline_symbols='unicode'
 set t_Co=256
 
-nmap <F2> :w !pbcopy<CR>
-nmap <F3> :r !pbpaste<CR>
-
 """"""Taglist"""""""
 "for ctags in mac is different with ctags in Linux
 set tags=tags;
@@ -161,11 +158,10 @@ nmap <C-a> :A<CR>
 """"""Syntasitic""""""""
 let g:syntastic_error_symbol = '✗'  "set error or warning signs
 let g:syntastic_warning_symbol = '⚠'
-let g:syntastic_cpp_compiler = "/usr/local/g++" "use g++ instead of clang
+"let g:syntastic_cpp_compiler = "/usr/local/g++" "use g++ instead of clang
 let g:syntastic_cpp_compiler_options = ' -std=c++11' "support c++11
 
 """"""OmniCppComplete""""""
-
 set tags+=~/dotfiles/tags/cpp
 let OmniCpp_NamespaceSearch = 1
 let OmniCpp_GlobalScopeSearch = 1
