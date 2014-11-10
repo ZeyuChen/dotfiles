@@ -92,8 +92,9 @@ filetype indent plugin on
 :command W w
 :command Q q
 
-""hot key for copy to register "
+""hot key for copy and paste use system register
 vmap <leader>c "+y
+nmap <leader>v "+p
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Keyboard Mapping
@@ -135,6 +136,7 @@ nmap <F7> :! ./%< < in.txt<CR>
 
 """"""NERDTree.vim""""""""
 map <F11> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.o$','\.so','\.pyc$']
 
 """""Powerline"""""""
 set laststatus=2
@@ -158,7 +160,7 @@ nmap <C-a> :A<CR>
 """"""Syntasitic""""""""
 let g:syntastic_error_symbol = '✗'  "set error or warning signs
 let g:syntastic_warning_symbol = '⚠'
-"let g:syntastic_cpp_compiler = "/usr/local/g++" "use g++ instead of clang
+"let g:syntastic_cpp_compiler = "clang++" "use g++ instead of clang
 let g:syntastic_cpp_compiler_options = ' -std=c++11' "support c++11
 
 """"""OmniCppComplete""""""
