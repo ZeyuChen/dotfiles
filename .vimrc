@@ -37,7 +37,6 @@ noremap <Leader>Q :qa!<CR>   " Quit all windows
 set number
 "cursorline and cursorcolumn
 set cursorline
-set cursorcolumn
 
 "ruler
 set ruler
@@ -53,15 +52,14 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab	"tab is replaced with 4 spaces
 
-" Make search case insensitive
+"Make search case insensitive
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 
-" bind Ctrl+<movement> keys to move around the windows, instead of using
-" Ctrl+w + <movement>
-" Every unnecessary keystroke that can be saved is good for your health :)
+"bind Ctrl+<movement> keys to move around the windows, instead of using
+"Ctrl+w + <movement>
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
