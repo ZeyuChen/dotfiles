@@ -18,10 +18,6 @@ call vundle#end()
 " Rebind <Leader> key
 let mapleader = ","
 
-" easier moving between tabs
-map <Leader>n <esc>:tabprevious<CR>
-map <Leader>m <esc>:tabnext<CR>
-map <Leader>a <esc>ggVG<CR>
  
 " easier moving of code blocks
 " " Try to go into visual mode (v), thenselect several lines of code here and
@@ -30,8 +26,13 @@ vnoremap < <gv  " better indentation
 vnoremap > >gv  " better indentation
 
  " Quick quit command
-noremap <Leader>q :quit<CR>  " Quit current window
-noremap <Leader>Q :qa!<CR>   " Quit all windows
+noremap <leader>q :quit<CR>  " Quit current window
+noremap <leader>Q :qa!<CR>   " Quit all windows
+map <leader>a <esc>ggVG<CR>
+
+"hot key for copy and paste use system register
+vmap <leader>c "+y
+nmap <leader>v "+p
 
 "line number
 set number
@@ -100,50 +101,47 @@ filetype indent plugin on
 :command W w
 :command Q q
 
-""hot key for copy and paste use system register
-vmap <leader>c "+y
-nmap <leader>v "+p
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Keyboard Mapping
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <F4> :call AddHeader()<CR>
-func! AddHeader()
-	if &filetype == 'cpp'
-		call append(0, "#include <iostream>")
-        call append(1, "#include <cstring>")
-		call append(2, "#include <algorithm>")
-		call append(3, "#include <cstdio>")
-		call append(4, "#include <queue>")
-		call append(5, "#include <vector>")
-		call append(6, "#include <cctype>")
-		call append(7, "#include <string>")
-        call append(8, "#include <map>")
-        call append(9, "")
-		call append(10, "using namespace std;")
-		call append(11, "")
-		call append(12, "int main() {")
-		call append(13, "}")
-	endif
-endfunc
+"map <F4> :call AddHeader()<CR>
+"func! AddHeader()
+"	if &filetype == 'cpp'
+"		call append(0, "#include <iostream>")
+"        call append(1, "#include <cstring>")
+"		call append(2, "#include <algorithm>")
+"		call append(3, "#include <cstdio>")
+"		call append(4, "#include <queue>")
+"		call append(5, "#include <vector>")
+"		call append(6, "#include <cctype>")
+"		call append(7, "#include <string>")
+"        call append(8, "#include <map>")
+"        call append(9, "")
+"		call append(10, "using namespace std;")
+"		call append(11, "")
+"		call append(12, "int main() {")
+"		call append(13, "}")
+"	endif
+"endfunc
 
 """""""ACM mode""""""""""
 "Compile using g++
-nmap <F5> :call Compile()<CR>
-func! Compile()
-    exec "w"
-    if &filetype == "cpp"
-        exec "!/usr/local/bin/g++ % -o %< -std=c++11" 
-    endif
-endfunc
-
-"Run
-nmap <F6> :! ./%<<CR>
-"Run with file input
-nmap <F7> :! ./%< < in.txt<CR>
+"nmap <F5> :call Compile()<CR>
+"func! Compile()
+"    exec "w"
+"    if &filetype == "cpp"
+"        exec "!/usr/local/bin/g++ % -o %< -std=c++11" 
+"    endif
+"endfunc
+"
+""Run
+"nmap <F6> :! ./%<<CR>
+""Run with file input
+"nmap <F7> :! ./%< < in.txt<CR>
 
 """"""NERDTree.vim""""""""
-map <F11> :NERDTreeToggle<CR>
+map <leader>[ :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.o$','\.so','\.pyc$']
 
 """""Powerline"""""""
@@ -159,10 +157,10 @@ let Tlist_Show_One_File=1 "only show current file's ctag
 let Tlist_Exit_OnlyWindow=1 "exit vim when taglist is the last windows
 let Tlist_Use_Right_Window=1 "show taglist windows on the right
 let Tlist_GainFocus_On_ToggleOpen=1
-nmap <F12> :TlistToggle<CR>
+nmap <leader>] :TlistToggle<CR>
 
 """"""A.vim""""""""
-nmap <C-a> :A<CR>
+nmap <leader>s :A<CR>
 
 
 """"""Syntasitic""""""""
@@ -171,7 +169,7 @@ let g:syntastic_warning_symbol = '⚠'
 "let g:syntastic_cpp_compiler = "clang++" "use g++ instead of clang
 "let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++' "support c++11
 let g:syntastic_cpp_compiler = "/usr/local/bin/g++" "use g++ instead of clang
-let g:syntastic_cpp_compiler_options = ' -std=c++11  '"support c++11
+let g:syntastic_cpp_compiler_options = ' -std=c++0x  ' "support c++11
 
 """"""OmniCppComplete""""""
 set tags+=~/dotfiles/tags/cpp
