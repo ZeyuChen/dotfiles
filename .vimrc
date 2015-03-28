@@ -48,6 +48,8 @@ set colorcolumn=80
 "indent
 set autoindent
 set smartindent
+set cindent
+"set cinoptions+=g1
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -166,10 +168,10 @@ nmap <leader>s :A<CR>
 """"""Syntasitic""""""""
 let g:syntastic_error_symbol = '✗'  "set error or warning signs
 let g:syntastic_warning_symbol = '⚠'
-"let g:syntastic_cpp_compiler = "clang++" "use g++ instead of clang
-"let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++' "support c++11
-let g:syntastic_cpp_compiler = "/usr/local/bin/g++" "use g++ instead of clang
-let g:syntastic_cpp_compiler_options = ' -std=c++0x  ' "support c++11
+let g:syntastic_cpp_compiler = "clang++" "use g++ instead of clang
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++' "support c++11
+"let g:syntastic_cpp_compiler = "/usr/local/bin/g++" "use g++ instead of clang
+"let g:syntastic_cpp_compiler_options = ' -std=c++0x  ' "support c++11
 
 """"""OmniCppComplete""""""
 set tags+=~/dotfiles/tags/cpp
