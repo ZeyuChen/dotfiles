@@ -1,3 +1,14 @@
+# Source global definitions
+
+# Jumbo
+export JUMBO_ROOT="/home/users/chenzeyu01/.jumbo"
+export MANPATH="$JUMBO_ROOT/share/man:$(manpath)"
+
+export PATH="$JUMBO_ROOT/bin:$PATH"
+export PATH="/opt/compiler/gcc-4.8.2/bin":$PATH
+export PATH="/home/tools/bin/64/":$PATH   # for vim at Baidu
+export PATH="/home/tools/tools/scmtools/usr/bin/":$PATH   # for comake2 at Baidu
+
 # Path to your oh-my-zsh configuration.
 ZSH=~/.oh-my-zsh
 
@@ -51,9 +62,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin"
 
-export LD_LIBRARY_PATH="/usr/local/lib/":$LD_LIBRARY_PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions

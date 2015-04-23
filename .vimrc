@@ -1,10 +1,10 @@
 set nocompatible    "be iMproved, required
 filetype off        
+
+"Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-colorscheme desert
-"vim plugin install by vundle
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/vim-powerline'
@@ -18,6 +18,9 @@ call vundle#end()
 
 " Rebind <Leader> key
 let mapleader = ","
+
+"Color schema
+colorscheme desert
 
  
 " easier moving of code blocks
@@ -44,7 +47,7 @@ set cursorline
 set ruler
 
 "set color column for control code length
-set colorcolumn=80
+"set colorcolumn=80
 
 "indent
 set autoindent
@@ -73,7 +76,7 @@ map <c-h> <c-w>h
 set whichwrap+=<,>,h,l
 
 "using mouse
-set mouse=a
+set mouse=
 
 " Bind nohl
 " Removes highlight of your last search
@@ -155,7 +158,7 @@ set t_Co=256
 """"""Taglist"""""""
 "for ctags in mac is different with ctags in Linux
 set tags=tags;
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_Ctags_Cmd='/usr/bin/ctags'
 let Tlist_Show_One_File=1 "only show current file's ctag
 let Tlist_Exit_OnlyWindow=1 "exit vim when taglist is the last windows
 let Tlist_Use_Right_Window=1 "show taglist windows on the right
@@ -204,3 +207,5 @@ let g:pymode_quickfix_maxheight = 6
 let g:pymode_indent = 1
 let g:pymode_folding = 1
 let g:pymode_motion = 1
+
+
