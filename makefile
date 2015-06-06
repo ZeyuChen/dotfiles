@@ -1,5 +1,5 @@
 
-init: vundle oh-my-zsh tmux zsh vim iterm
+init: vundle oh-my-zsh tmux zsh vim iterm2
 
 vundle:
 	[ -d ~/.vim/bundle/Vundle.vim ] || \
@@ -18,5 +18,5 @@ zsh:
 vim:
 	ln -fs `pwd`/.vimrc ~/.vimrc
 
-config:
+iterm2:
 	ln -fs `pwd`/config ~/.ssh/config
