@@ -18,5 +18,5 @@ zsh:
 vim:
 	ln -fs `pwd`/.vimrc ~/.vimrc
 
-vim:
+config:
 	ln -fs `pwd`/config ~/.ssh/config
