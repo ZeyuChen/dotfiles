@@ -7,7 +7,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/a.vim'
 Plugin 'vim-scripts/taglist.vim'
@@ -150,10 +150,10 @@ filetype indent plugin on
 map <leader>[ :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.o$','\.so','\.pyc$']
 
-"""""Powerline"""""""
-set laststatus=2
-let g:Powerline_symbols='unicode'
-set t_Co=256
+"""""Airline"""""""
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
 
 """"""Taglist"""""""
 "for ctags in mac is different with ctags in Linux
