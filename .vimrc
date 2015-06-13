@@ -7,12 +7,14 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
+Plugin 'Lokaltog/vim-powerline'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/a.vim'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/OmniCppComplete'
 Plugin 'klen/python-mode'
+"Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
@@ -88,11 +90,9 @@ syntax enable
 syntax on
 
 "encoding
-set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
 set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,cp936
-set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,latin1
 
 set nobackup    "no temp file
 set noswapfile  "no swap file
@@ -150,10 +150,9 @@ filetype indent plugin on
 map <leader>[ :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.o$','\.so','\.pyc$']
 
-"""""Airline"""""""
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
+"""""Powerline"""""""
+"let g:Powerline_symbols = 'fancy'
+set laststatus=2
 
 """"""Taglist"""""""
 "for ctags in mac is different with ctags in Linux
