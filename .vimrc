@@ -24,7 +24,6 @@ let mapleader = ","
 "Color schema
 colorscheme desert
 
- 
 " easier moving of code blocks
 " " Try to go into visual mode (v), thenselect several lines of code here and
 " " then press ``>`` several times.
@@ -49,7 +48,7 @@ set cursorline
 set ruler
 
 "set color column for control code length
-"set colorcolumn=80
+set colorcolumn=100
 
 "indent
 set autoindent
@@ -59,6 +58,7 @@ set cinoptions+=g0
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set tw=100
 set expandtab	"tab is replaced with 4 spaces
 
 "Make search case insensitive
