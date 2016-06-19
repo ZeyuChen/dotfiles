@@ -1,5 +1,5 @@
 
-init: vundle oh-my-zsh tmux zsh vim iterm2
+init: vundle oh-my-zsh tmux zsh vim
 
 vundle:
 	[ -d ~/.vim/bundle/Vundle.vim ] || \
@@ -7,7 +7,7 @@ vundle:
 
 oh-my-zsh:
 	[ -d ~/.oh-my-zsh/.git ] || \
-		git clone git://github.com/robbyrussel/oh-my-zsh.git ~/.oh-my-zsh
+		sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 tmux:
 	ln -fs `pwd`/.tmux.conf ~/.tmux.conf
@@ -17,6 +17,3 @@ zsh:
 
 vim:
 	ln -fs `pwd`/.vimrc ~/.vimrc
-
-iterm2:
-	ln -fs `pwd`/config ~/.ssh/config
