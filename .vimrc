@@ -12,7 +12,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/a.vim'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/OmniCppComplete'
-#Plugin 'klen/python-mode'
+"Plugin 'klen/python-mode'
 "Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
@@ -195,15 +195,15 @@ highlight PmenuSbar    cterm=none ctermfg=none      ctermbg=Green
 highlight PmenuThumb   cterm=none ctermfg=DarkGreen ctermbg=DarkGreen
 
 """"""Python-Mode"""""""""""
-let g:pymode = 1
-let g:pymode_warnings = 1
-let g:pymode_options = 1
-let g:pymode_options_max_line_length = 79
-let g:pymode_options_colorcolumn = 1
-let g:pymode_quickfix_minheight = 3
-let g:pymode_quickfix_maxheight = 6
-let g:pymode_indent = 1
-let g:pymode_folding = 1
-let g:pymode_motion = 1
+"let g:pymode = 1
+"let g:pymode_warnings = 1
+"let g:pymode_options = 1
+"let g:pymode_options_max_line_length = 79
+"let g:pymode_options_colorcolumn = 1
+"let g:pymode_quickfix_minheight = 3
+"let g:pymode_quickfix_maxheight = 6
+"let g:pymode_indent = 1
+"let g:pymode_folding = 1
+"let g:pymode_motion = 1
 
 
