@@ -1,16 +1,5 @@
 # Source global definitions
 
-# Jumbo
-export JUMBO_ROOT="/home/users/chenzeyu01/.jumbo"
-export MANPATH="$JUMBO_ROOT/share/man:$(manpath)"
-
-export PATH="$JUMBO_ROOT/bin:$PATH"
-export PATH="/opt/compiler/gcc-4.8.2/bin":$PATH
-export PATH="/home/tools/bin/64/":$PATH   # for vim at Baidu
-export PATH="/home/tools/tools/scmtools/usr/bin/":$PATH   # for comake2 at Baidu
-alias pwf='/home/users/chenzeyu01/software/sk_tools/pwf'
-
-export PATH="/home/users/chenzeyu01/dotfiles":$PATH  # for eagle at Baidu
 # Path to your oh-my-zsh configuration.
 ZSH=~/.oh-my-zsh
 
@@ -60,7 +49,6 @@ ZSH_THEME="gentoo"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
-source ~/.bashrc
 
 # User configuration
 
@@ -79,5 +67,3 @@ source ~/.bashrc
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-

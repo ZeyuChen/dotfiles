@@ -7,13 +7,12 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'bling/vim-airline'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/a.vim'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/OmniCppComplete'
-Plugin 'klen/python-mode'
+#Plugin 'klen/python-mode'
 "Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
