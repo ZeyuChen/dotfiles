@@ -12,11 +12,23 @@ Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/a.vim'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/OmniCppComplete'
-Plugin 'python-mode/python-mode'
+"Plugin 'python-mode/python-mode'
 Plugin 'vim-airline/vim-airline'
 "Plugin 'Valloric/YouCompleteMe'
 
+" Add maktaba and codefmt to the runtimepath.
+" (The latter must be installed before it can be used.)
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+" Also add Glaive, which is used to configure codefmt's maktaba flags. See
+" `:help :Glaive` for usage.
+Plugin 'google/vim-glaive'
+" ...
 call vundle#end()
+" the glaive#Install() should go after the "call vundle#end()"
+call glaive#Install()
+" Optional: Enable codefmt's default mappings on the <Leader>= prefix.
+Glaive codefmt plugin[mappings]
 
 " Rebind <Leader> key
 let mapleader = ","
@@ -107,45 +119,6 @@ filetype indent plugin on
 :command W w
 :command Q q
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Keyboard Mapping
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"map <F4> :call AddHeader()<CR>
-"func! AddHeader()
-"	if &filetype == 'cpp'
-"		call append(0, "#include <iostream>")
-"        call append(1, "#include <cstring>")
-"		call append(2, "#include <algorithm>")
-"		call append(3, "#include <cstdio>")
-"		call append(4, "#include <queue>")
-"		call append(5, "#include <vector>")
-"		call append(6, "#include <cctype>")
-"		call append(7, "#include <string>")
-"        call append(8, "#include <map>")
-"        call append(9, "")
-"		call append(10, "using namespace std;")
-"		call append(11, "")
-"		call append(12, "int main() {")
-"		call append(13, "}")
-"	endif
-"endfunc
-
-"""""""ACM mode""""""""""
-"Compile using g++
-"nmap <F5> :call Compile()<CR>
-"func! Compile()
-"    exec "w"
-"    if &filetype == "cpp"
-"        exec "!/usr/local/bin/g++ % -o %< -std=c++11" 
-"    endif
-"endfunc
-"
-""Run
-"nmap <F6> :! ./%<<CR>
-""Run with file input
-"nmap <F7> :! ./%< < in.txt<CR>
-
 """"""NERDTree.vim""""""""
 map <leader>[ :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.o$','\.so','\.pyc$']
@@ -196,16 +169,32 @@ highlight PmenuSbar    cterm=none ctermfg=none      ctermbg=Green
 highlight PmenuThumb   cterm=none ctermfg=DarkGreen ctermbg=DarkGreen
 
 """"""Python-Mode"""""""""""
-let g:pymode_run = 1
-let g:pymode_run_bind = '<leader>r'
-"let g:pymode_breakpoint = 1
-"let g:pymode_breakpoint_bind = '<leader>b'
-"let g:pymode_breakpoint_cmd = ''
-let g:pymode_lint_checkers = 'pylint' 
-let g:pymode_warnings = 1
-let g:pymode_options = 1
-let g:pymode_options_max_line_length = 79
-let g:pymode_indent = 1
-let g:pymode_paths=['/usr/local/bin/']
+" let g:pymode_python = "python3"
+" let g:pymode_run = 1
+" let g:pymode_run_bind = '<leader>r'
+" "let g:pymode_breakpoint = 1
+" "let g:pymode_breakpoint_bind = '<leader>b'
+" "let g:pymode_breakpoint_cmd = ''
+" let g:pymode_lint_checkers = 'pylint' 
+" let g:pymode_warnings = 1
+" let g:pymode_options = 1
+" let g:pymode_options_max_line_length = 79
+" let g:pymode_indent = 1
+" let g:pymode_virtualenv_path="/anaconda3"
+" "let g:pymode_paths=['/usr/local/bin/']
+" let g:pymode_paths=[]
 
 
+""""""""vim-codefmt""""""""""""""""""""'
+" 自动代码格式化
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType gn AutoFormatBuffer gn
+  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer yapf
+  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+augroup END

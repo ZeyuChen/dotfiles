@@ -7,7 +7,7 @@ vundle:
 
 oh-my-zsh:
 	[ -d ~/.oh-my-zsh/.git ] || \
-		sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 tmux:
 	ln -fs `pwd`/.tmux.conf ~/.tmux.conf

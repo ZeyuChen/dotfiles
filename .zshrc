@@ -68,6 +68,7 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 export PATH=/usr/local/:$PATH
+export PATH=/anaconda3/bin/:$PATH
 export PATH=/Applications/CMake.app/Contents/bin/:$PATH
 export paddledocker="docker run paddle "
 export LD_LIBRARY_PATH="/usr/local/Cellar/python@2/2.7.15_1/Frameworks/Python.framework/Versions/2.7/lib/":$LD_LIBRARY_PATH
@@ -75,3 +76,22 @@ export DYLD_LIBRARY_PATH="/usr/local/Cellar/python@2/2.7.15_1/Frameworks/Python.
 export PATH="/usr/local/opt/llvm/bin:$PATH" #llvm
 export LDFLAGS="-L/usr/local/opt/llvm/lib" #llvm
 export CPPFLAGS="-I/usr/local/opt/llvm/include" #llvm
+
+# for TF Hub
+export TFHUB_CACHE_DIR=$HOME/TFHub
+export TFHUB_DOWNLOAD_PROGRESS=true
+
+function proxyoff(){
+    unset http_proxy
+    unset https_proxy
+    echo -e "已关闭代理"
+}
+
+function proxyon() {
+    sudo /usr/local/sbin/privoxy /usr/local/etc/privoxy/config # 确保启动privoxy
+    export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+    export http_proxy="http://127.0.0.1:8118"
+    export https_proxy="https://127.0.0.1:8118"
+    echo -e "已开启代理"
+}
+. /anaconda3/etc/profile.d/conda.sh
