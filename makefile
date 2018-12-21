@@ -1,5 +1,5 @@
 
-init: vundle oh-my-zsh tmux zsh vim
+init: vundle oh-my-zsh tmux zsh bash vim
 
 vundle:
 	[ -d ~/.vim/bundle/Vundle.vim ] || \
@@ -14,6 +14,9 @@ tmux:
 
 zsh:
 	ln -fs `pwd`/.zshrc ~/.zshrc
+
+bash:
+	ln -fs `pwd`/.bashrc ~/.bashrc
 
 vim:
 	ln -fs `pwd`/.vimrc ~/.vimrc
