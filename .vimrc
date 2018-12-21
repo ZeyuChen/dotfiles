@@ -8,14 +8,18 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/vim-powerline'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/a.vim'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/OmniCppComplete'
+Plugin 'cjrh/vim-conda'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'ervandew/supertab'
 "Plugin 'python-mode/python-mode'
 Plugin 'vim-airline/vim-airline'
 "Plugin 'Valloric/YouCompleteMe'
 
+" C++ 自动补全
 " Add maktaba and codefmt to the runtimepath.
 " (The latter must be installed before it can be used.)
 Plugin 'google/vim-maktaba'
@@ -60,17 +64,17 @@ set cursorline
 set ruler
 
 "set color column for control code length
-set colorcolumn=100
+set colorcolumn=80
 
 "indent
 set autoindent
 set smartindent
 set cindent
 set cinoptions+=g0
-set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set tw=100
+set tw=80
+set tabstop=2   "tab is replaced with 4 spaces
 set expandtab	"tab is replaced with 4 spaces
 
 "Make search case insensitive
@@ -142,10 +146,10 @@ nmap <leader>s :A<CR>
 
 
 """"""Syntasitic""""""""
-let g:syntastic_error_symbol = '✗'  "set error or warning signs
-let g:syntastic_warning_symbol = '⚠'
-let g:syntastic_cpp_compiler = "/opt/compiler/gcc-4.8.2/bin/g++" "use g++ instead of clang
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++' "support c++11
+"let g:syntastic_error_symbol = '✗'  "set error or warning signs
+"let g:syntastic_warning_symbol = '⚠'
+"let g:syntastic_cpp_compiler = "/opt/compiler/gcc-4.8.2/bin/g++" "use g++ instead of clang
+"let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++' "support c++11
 "let g:syntastic_cpp_compiler = "/usr/local/bin/g++" "use g++ instead of clang
 "let g:syntastic_cpp_compiler_options = ' -std=c++0x  ' "support c++11
 
@@ -198,3 +202,14 @@ augroup autoformat_settings
   autocmd FileType python AutoFormatBuffer yapf
   " Alternative: autocmd FileType python AutoFormatBuffer autopep8
 augroup END
+
+"""""""""vim-conda""""""""""""""'
+map <F4> :CondaChangeEnv<CR>
+let g:jedi#force_py_version = 2
+let g:UltisnipsUsePythonVersion = 2
+
+
+""""""""jedi-vim""""""""""""
+let g:jedi#auto_initialization = 0
+let g:SuperTabDefaultCompletionType = "context"
+let g:jedi#popup_on_dot = 0
