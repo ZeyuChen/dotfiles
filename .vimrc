@@ -70,8 +70,8 @@ set autoindent
 set smartindent
 set cindent
 set cinoptions+=g0
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set tw=80
 set tabstop=2   "tab is replaced with 4 spaces
 set expandtab	"tab is replaced with 4 spaces
@@ -199,7 +199,7 @@ augroup autoformat_settings
   autocmd FileType html,css,json AutoFormatBuffer js-beautify
   autocmd FileType java AutoFormatBuffer google-java-format
   autocmd FileType python AutoFormatBuffer yapf
-  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+  " autocmd FileType python AutoFormatBuffer autopep8
 augroup END
 
 """"""""jedi-vim""""""""""""
