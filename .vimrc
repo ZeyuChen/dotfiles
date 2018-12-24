@@ -12,7 +12,6 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'vim-scripts/a.vim'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/OmniCppComplete'
-Plugin 'cjrh/vim-conda'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
 "Plugin 'python-mode/python-mode'
@@ -202,12 +201,6 @@ augroup autoformat_settings
   autocmd FileType python AutoFormatBuffer yapf
   " Alternative: autocmd FileType python AutoFormatBuffer autopep8
 augroup END
-
-"""""""""vim-conda""""""""""""""'
-map <F4> :CondaChangeEnv<CR>
-let g:jedi#force_py_version = 2
-let g:UltisnipsUsePythonVersion = 2
-
 
 """"""""jedi-vim""""""""""""
 let g:jedi#auto_initialization = 0
