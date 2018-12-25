@@ -43,6 +43,9 @@ alias mxnetenv="conda activate mxnet131-cu80mkl-py36"
 alias pytorchenv="conda activate pytorch1.0-cu80-py36"
 alias paddleenv="conda activate paddle1.2-py36"
 
+# nvidia-smi
+alias smi="watch -n 1 nvidia-smi"
+
 # PS display branch info
 function git_branch {
    branch="`git branch 2>/dev/null | grep "^\*" | sed -e "s/^\*\ //"`"
