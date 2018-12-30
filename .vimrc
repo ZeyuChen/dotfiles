@@ -49,6 +49,7 @@ vnoremap > >gv  " better indentation
 noremap <leader>q :quit<CR>  " Quit current window
 noremap <leader>Q :qa!<CR>   " Quit all windows
 map <leader>a <esc>ggVG<CR>
+map <leader>r :!python %<CR>  " python
 
 "hot key for copy and paste use system register
 vmap <leader>c "+y

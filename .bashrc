@@ -14,6 +14,8 @@ export JUMBO_ROOT="/home/chenzeyu01/.jumbo"
 export PATH="$JUMBO_ROOT/bin:$PATH"
 export MANPATH="$JUMBO_ROOT/share/man:$(manpath)"
 
+# protoc
+export PATH="$HOME/tool/bin:$PATH"
 
 # Conda
 source /home/chenzeyu01/anaconda3/etc/profile.d/conda.sh
@@ -46,6 +48,10 @@ alias paddleenv="conda activate paddle1.2-py36"
 # nvidia-smi
 alias smi="watch -n 1 nvidia-smi"
 
+
+# scp addr
+alias addr=' echo chenzeyu01@`hostname`:`pwd`'
+
 # PS display branch info
 function git_branch {
    branch="`git branch 2>/dev/null | grep "^\*" | sed -e "s/^\*\ //"`"
@@ -56,5 +62,6 @@ function git_branch {
        echo " ($branch)"
    fi
 }
-
 export PS1='\u@\h \[\033[01;36m\]\W\[\033[01;32m\]$(git_branch)\[\033[00m\] \$ '
+
+export CUDA_VISIBLE_DEVICES=1
