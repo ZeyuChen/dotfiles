@@ -68,7 +68,7 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 export PATH=/usr/local/:$PATH
-export PATH=/anaconda3/bin/:$PATH
+export PATH=$HOME/anaconda3/bin/:$PATH
 export PATH=/Applications/CMake.app/Contents/bin/:$PATH
 export paddledocker="docker run paddle "
 export LD_LIBRARY_PATH="/usr/local/Cellar/python@2/2.7.15_1/Frameworks/Python.framework/Versions/2.7/lib/":$LD_LIBRARY_PATH
@@ -94,4 +94,4 @@ function proxyon() {
     export https_proxy="https://127.0.0.1:8118"
     echo -e "已开启代理"
 }
-. /anaconda3/etc/profile.d/conda.sh
+. $HOME/anaconda3/etc/profile.d/conda.sh
