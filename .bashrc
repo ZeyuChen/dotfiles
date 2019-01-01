@@ -18,7 +18,7 @@ export MANPATH="$JUMBO_ROOT/share/man:$(manpath)"
 export PATH="$HOME/tool/bin:$PATH"
 
 # Conda
-source /home/chenzeyu01/anaconda3/etc/profile.d/conda.sh
+source $HOME/anaconda3/etc/profile.d/conda.sh
 
 
 # Baidu Internal Proxy
