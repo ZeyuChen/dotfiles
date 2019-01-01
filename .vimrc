@@ -49,7 +49,6 @@ vnoremap > >gv  " better indentation
 noremap <leader>q :quit<CR>  " Quit current window
 noremap <leader>Q :qa!<CR>   " Quit all windows
 map <leader>a <esc>ggVG<CR>
-map <leader>r :!python %<CR>  " python
 
 "hot key for copy and paste use system register
 vmap <leader>c "+y
@@ -207,3 +206,48 @@ augroup END
 let g:jedi#auto_initialization = 0
 let g:SuperTabDefaultCompletionType = "context"
 let g:jedi#popup_on_dot = 0
+
+
+""""""auto set title"""""""""""""""""""'
+
+" add header comments for .h .c .hpp .cpp .mk .sh new file
+" auto call SetTitle func
+autocmd BufNewFile *.[ch],*.hpp,*.cpp,Makefile,*.mk,*.sh,*.py exec ":call SetTitle()"
+ 
+" add comment for cpp
+func SetLicencePy()
+	call append(0,  "#   Copyright (c) ".strftime("%Y")."  PaddlePaddle Authors. All Rights Reserved.")
+	call append(1,  "#   ")
+	call append(2,  "# Licensed under the Apache License, Version 2.0 (the \"License\"")";
+	call append(3,  "# you may not use this file except in compliance with the License.")
+	call append(4,  "# You may obtain a copy of the License at")
+	call append(5,  "#   ")
+	call append(6,  "#     http://www.apache.org/licenses/LICENSE-2.0")
+	call append(7,  "#   ")
+	call append(8,  "# Unless required by applicable law or agreed to in writing, software")
+	call append(9, "# distributed under the License is distributed on an \"AS IS\" BASIS,")
+	call append(10, "# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.")
+	call append(11, "# See the License for the specific language governing permissions and")
+	call append(12, "# limitations under the License.")
+	call append(13, "")
+endfunc
+
+func SetHeader()
+	if &filetype == 'python'
+		call SetLicencePy()
+	endif
+endfunc
+
+map <leader>l :call SetHeader() <CR>
+
+
+""""""""auto run scripts"""""""""""""
+map <leader>r :call RunScripts() <CR>
+func RunScripts()
+  exec "w"
+  if &filetype == 'sh'
+    exec :!bash %
+  elseif &filetype == 'python'
+    exec "!python %"
+  endif
+endfunc
