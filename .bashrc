@@ -49,8 +49,6 @@ alias paddleenv="conda activate paddle1.2-py36"
 alias smi="watch -n 1 nvidia-smi"
 
 
-# scp addr
-alias addr=' echo chenzeyu01@`hostname`:`pwd`'
 
 # PS display branch info
 function git_branch {
@@ -65,3 +63,11 @@ function git_branch {
 export PS1='\u@\h \[\033[01;36m\]\W\[\033[01;32m\]$(git_branch)\[\033[00m\] \$ '
 
 export CUDA_VISIBLE_DEVICES=1
+
+# temp for paddlehub develop
+export PYTHONPATH="/home/chenzeyu01/Paddle/PaddleHub/":
+
+# scp addr
+alias addr='echo chenzeyu01@`hostname`:`pwd`'
+alias ftpaddr='echo -n ftp://`hostname`/`pwd`/;echo '
+alias httpserver='python -m SimpleHTTPServer'

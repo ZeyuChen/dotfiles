@@ -212,7 +212,7 @@ let g:jedi#popup_on_dot = 0
 
 " add header comments for .h .c .hpp .cpp .mk .sh new file
 " auto call SetTitle func
-autocmd BufNewFile *.[ch],*.hpp,*.cpp,Makefile,*.mk,*.sh,*.py exec ":call SetTitle()"
+autocmd BufNewFile *.py,*.cc,*.h exec ":call SetHeader()"
  
 " add comment for cpp
 func SetLicencePy()
