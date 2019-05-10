@@ -12,8 +12,8 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'vim-scripts/a.vim'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/OmniCppComplete'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'ervandew/supertab'
+"Plugin 'davidhalter/jedi-vim'
+"Plugin 'ervandew/supertab'
 "Plugin 'python-mode/python-mode'
 Plugin 'vim-airline/vim-airline'
 "Plugin 'Valloric/YouCompleteMe'
@@ -29,9 +29,9 @@ Plugin 'google/vim-glaive'
 " ...
 call vundle#end()
 " the glaive#Install() should go after the "call vundle#end()"
-call glaive#Install()
-" Optional: Enable codefmt's default mappings on the <Leader>= prefix.
-Glaive codefmt plugin[mappings]
+" call glaive#Install()
+" " Optional: Enable codefmt's default mappings on the <Leader>= prefix.
+" Glaive codefmt plugin[mappings]
 
 " Rebind <Leader> key
 let mapleader = ","
@@ -63,7 +63,7 @@ set cursorline
 set ruler
 
 "set color column for control code length
-set colorcolumn=80
+"set colorcolumn=80
 
 "indent
 set autoindent
@@ -170,22 +170,6 @@ highlight Pmenu        cterm=none ctermfg=White     ctermbg=DarkGrey
 highlight PmenuSel     cterm=none ctermfg=Black     ctermbg=DarkGreen
 highlight PmenuSbar    cterm=none ctermfg=none      ctermbg=Green
 highlight PmenuThumb   cterm=none ctermfg=DarkGreen ctermbg=DarkGreen
-
-""""""Python-Mode"""""""""""
-" let g:pymode_python = "python3"
-" let g:pymode_run = 1
-" let g:pymode_run_bind = '<leader>r'
-" "let g:pymode_breakpoint = 1
-" "let g:pymode_breakpoint_bind = '<leader>b'
-" "let g:pymode_breakpoint_cmd = ''
-" let g:pymode_lint_checkers = 'pylint' 
-" let g:pymode_warnings = 1
-" let g:pymode_options = 1
-" let g:pymode_options_max_line_length = 79
-" let g:pymode_indent = 1
-" let g:pymode_virtualenv_path="/anaconda3"
-" "let g:pymode_paths=['/usr/local/bin/']
-" let g:pymode_paths=[]
 
 
 """"""""vim-codefmt""""""""""""""""""""'
