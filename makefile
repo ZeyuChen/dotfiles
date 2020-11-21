@@ -1,5 +1,5 @@
 
-init: vundle oh-my-zsh tmux zsh bash vim
+init: vundle oh-my-zsh vim
 
 vundle:
 	[ -d ~/.vim/bundle/Vundle.vim ] || \
